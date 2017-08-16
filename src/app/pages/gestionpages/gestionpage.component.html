@@ -1,0 +1,27 @@
+<div class="form-group">
+    Title :
+    <input class="form-control"
+           type ="text"
+           placeholder="Title here."
+           name= "title"
+           [(ngModel)]="gestionpage.title">
+</div>
+<div [ngClass]="{'form-group': true, 'has-error': err}" >
+    Alias :
+    <input class="form-control"
+           type ="text"
+           placeholder="Alias here."
+           name= "alias"
+           [(ngModel)]="gestionpage.alias">
+</div>
+<p>{{aliasError}}</p>
+
+Content :
+<ckeditor [(ngModel)]="gestionpage.content" debounce="500">
+    <p>Hello <strong>world</strong></p>
+</ckeditor>
+<br>
+<div class="form-group">
+    <button class="btn btn-primary" (click)="addPage(gestionpage)">Add page</button>
+    <button  class="btn " (click)="resetAddPage()">Reset</button>
+</div>

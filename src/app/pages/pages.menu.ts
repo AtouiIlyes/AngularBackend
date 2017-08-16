@@ -46,7 +46,7 @@ export const PAGES_MENU = [
                 data: {
                     menu: {
                         title: 'Message',
-                        icon: 'ion-social-hackernews-outline',
+                        icon: 'ion-android-textsms',
                         selected: false,
                         expanded: false,
                         order: 500,
@@ -58,7 +58,7 @@ export const PAGES_MENU = [
                         data: {
                             menu: {
                                 title: 'Messages',
-                                icon: 'ion-ios-list-outline'
+                                icon: 'ion-android-textsms'
 
                             }
                         }
@@ -66,7 +66,18 @@ export const PAGES_MENU = [
 
                 ]
             },
-
+            {
+                path: 'gestionpages',
+                data: {
+                    menu: {
+                        title: 'Gestion Pages',
+                        icon: 'ion-gear-a',
+                        selected: false,
+                        expanded: false,
+                        order: 250,
+                    }
+                }
+            },
             {
                 path: 'components',
                 data: {

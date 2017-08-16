@@ -28,6 +28,7 @@ export const routes: Routes = [
       { path: 'news', loadChildren: './news/tables.module#TablesModule' },
       { path: 'maps', loadChildren: './maps/maps.module#MapsModule' },
       { path: 'contact', loadChildren: './contact/contact.module#ContactModule' },
+      { path: 'gestionpages', loadChildren: './gestionpages/gestionpage.module#GestionPageModule' }
 
     ]
   }
