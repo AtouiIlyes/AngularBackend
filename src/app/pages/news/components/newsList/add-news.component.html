@@ -1,0 +1,41 @@
+<h3 class="add-user-heading">Add News </h3>
+<hr>
+
+<div class="form-group">
+    Title :
+    <input class="form-control"
+           type ="text"
+           placeholder="Title here."
+           name= "title"
+           [(ngModel)]="actualite.title">
+</div>
+
+
+
+<div class="form-group">
+    Text :
+    <textarea class="form-control"
+           type ="text"
+           placeholder="Your News here."
+           name="textA"
+           [(ngModel)]="actualite.textA">
+    </textarea>
+</div>
+
+<div class="form-group">
+    <label for="sel1">Featured list:</label>
+    <select class="form-control" id="sel1" [(ngModel)]="actualite.featured">
+        <option>true</option>
+        <option>false</option>
+
+    </select>
+</div>
+<!-- File input for upload without using the plugin. -->
+<input id="photo" type="file" />
+<!-- button to trigger the file upload when submitted -->
+
+
+<div class="form-group">
+    <button class="btn btn-primary" (click)="addNews(actualite)">Add News</button>
+    <button  class="btn " (click)="resetAddNews()">Reset</button>
+</div>

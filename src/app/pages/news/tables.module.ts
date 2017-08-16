@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { NgaModule } from '../../theme/nga.module';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { DataTableModule } from "angular2-datatable";
-import { HttpModule } from "@angular/http";
-import { DataFilterPipe } from './components/dataTables/data-filter.pipe';
+import { HttpModule, JsonpModule } from "@angular/http";
+import { DataFilterPipe } from './components/newsList/data-filter.pipe';
 import { HotTable, HotTableModule } from 'ng2-handsontable';
 
 import { routing } from './tables.routing';
@@ -20,9 +20,6 @@ import { CondensedTable } from './components/basicTables/components/condensedTab
 import { ContextualTable } from './components/basicTables/components/contextualTable';
 import { SmartTables } from './components/smartTables/smartTables.component';
 import { SmartTablesService } from './components/smartTables/smartTables.service';
-import { DataTables } from './components/dataTables/dataTables.component';
-import { DataTablesService } from './components/dataTables/dataTables.service';
-
 import { HotTablesComponent } from './components/hotTables/hotTables.component';
 import { HandsontableSectionComponent } from './components/hotTables/handsontable-section';
 import { BasicDemoComponent } from './components/hotTables/handsontable/basic-demo';
@@ -31,6 +28,11 @@ import { FinanceDemoComponent } from './components/hotTables/handsontable/financ
 import { ScienceDemoComponent } from './components/hotTables/handsontable/science-demo';
 import { SportDemoComponent } from './components/hotTables/handsontable/sport-demo';
 import { AdvancedDemoComponent } from './components/hotTables/handsontable/advanced-demo';
+import {ActualiteService} from "./components/newsList/actualite.service";
+import {NewsList} from "./components/newsList/newsList.component";
+import {AddNewsComponent} from "./components/newsList/add-news.component";
+import {FileSelectDirective} from "ng2-file-upload/index";
+import {UpdateNewsComponent} from "./components/newsList/update-news.component";
 
 @NgModule({
   imports: [
@@ -41,6 +43,7 @@ import { AdvancedDemoComponent } from './components/hotTables/handsontable/advan
     Ng2SmartTableModule,
     DataTableModule,
     HttpModule,
+    JsonpModule,
     HotTableModule
   ],
   declarations: [
@@ -53,7 +56,9 @@ import { AdvancedDemoComponent } from './components/hotTables/handsontable/advan
     ContextualTable,
     ResponsiveTable,
     SmartTables,
-    DataTables,
+    NewsList,
+    AddNewsComponent,
+    UpdateNewsComponent,
     DataFilterPipe,
     HotTablesComponent,
     HandsontableSectionComponent,
@@ -62,12 +67,12 @@ import { AdvancedDemoComponent } from './components/hotTables/handsontable/advan
     FinanceDemoComponent,
     ScienceDemoComponent,
     SportDemoComponent,
-    SheetDemoComponent
+    SheetDemoComponent,
+    FileSelectDirective
+
   ],
   providers: [
-    BasicTablesService,
-    SmartTablesService,
-    DataTablesService
+    ActualiteService
   ]
 })
 export class TablesModule {
