@@ -1,3 +1,5 @@
+<button class="btn btn-success" type="button"  [routerLink]="['../addmenu']"><i class="ion-ios-plus-outline"></i>  Add Menu</button>
+<br><br> <hr>
 <div class="widgets">
     <div class="row">
         <ba-card title="Basic Example" baCardClass="with-scroll" class="data-table-container">
@@ -44,37 +46,33 @@
                     <tr>
 
                         <th style="width: 20%">
-                            <mfDefaultSorter by="title">Email</mfDefaultSorter>
+                            <mfDefaultSorter by="title">Title</mfDefaultSorter>
                         </th>
                         <th style="width: 30%">
-                            <mfDefaultSorter by="textA">Message</mfDefaultSorter>
+                            <mfDefaultSorter by="textA">Position</mfDefaultSorter>
                         </th>
                         <th style="width: 10%">
-                            <mfDefaultSorter by="archived">Subject</mfDefaultSorter>
+                            <mfDefaultSorter by="archived">Page</mfDefaultSorter>
                         </th>
-                        <th style="width: 10%">
-                            <mfDefaultSorter by="archived">Name</mfDefaultSorter>
-                        </th>
-                        <th style="width: 20%">
-                            <mfDefaultSorter [by]="sortByWordLength">Date</mfDefaultSorter>
-                        </th>
-                        <th style="width: 10%">delete</th>
+
+                        <th style="width: 10%">update</th>
+                        <th style="width: 10%">archiver</th>
 
 
                     </tr>
 
                     </thead>
                     <tbody>
-                     <tr *ngFor="let contact of contacts"  >
+                    <tr *ngFor="let menu of menus"  >
 
-                        <td class="text-right">{{contact.email}}</td>
-                        <td >{{contact.message}}</td>
-                        <td class="text-left">{{contact.subject}}</td>
-                        <td class="text-right">{{contact.name}}</td>
-                        <td class="text-right">{{contact.date}}</td>
-
+                        <td class="text-right">{{menu.title}}</td>
+                        <td >{{menu.position}}</td>
+                        <td class="text-left">{{menu.page}}</td>
                         <td>
-                            <button  class="btn btn-danger">x</button>
+                            <button  (click)="archiverMenu(menu._id)" class="btn btn-danger">x</button>
+                        </td>
+                        <td>
+                            <button  [routerLink]="['../update', menu._id]" class="btn btn-info"><i class="ion-edit" aria-hidden="true"></i></button>
                         </td>
 
                     </tr>

@@ -1,0 +1,25 @@
+<div class="form-group">
+    Title :
+    <input class="form-control"
+           type="text"
+           placeholder="Title here."
+           name="title"
+           [(ngModel)]="gestionmenu.title"
+    >
+</div>
+
+<div class="form-group">
+    <label for="sel1">Pages list:</label>
+    <select class="form-control" id="sel1" [(ngModel)]="gestionmenu.page">
+        <option *ngFor="let page of pages"
+                [value]="page._id"
+                >
+            {{page.title}}
+        </option>
+
+    </select>
+</div>
+<div class="form-group">
+    <button class="btn btn-primary" (click)="addMenu(gestionmenu)">Add menu</button>
+    <button  class="btn " (click)="resetAddMenu()">Reset</button>
+</div>

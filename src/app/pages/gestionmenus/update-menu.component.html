@@ -1,0 +1,37 @@
+<h3 class="add-user-heading">Update Menu </h3>
+<hr>
+
+<div class="form-group">
+    Title :
+    <input class="form-control"
+           type ="text"
+           placeholder="Title here."
+           name= "title"
+           [(ngModel)]="menu.title">
+</div>
+
+
+
+<div class="form-group">
+    Position :
+    <input class="form-control"
+              type ="number"
+              name="position"
+              [(ngModel)]="menu.position">
+</div>
+
+<div class="form-group">
+    <label for="sel1">Pages list:</label>
+    <select class="form-control" id="sel1" [(ngModel)]="menu.page">
+        <option *ngFor="let page of pages"
+                [value]="page._id"
+        >
+            {{page.title}}
+        </option>
+
+    </select>
+</div>
+<div class="form-group">
+    <button class="btn btn-primary" (click)="updateMenu(gestionmenu)">Add menu</button>
+    <button  class="btn " (click)="resetUpdateMenu()">Reset</button>
+</div>

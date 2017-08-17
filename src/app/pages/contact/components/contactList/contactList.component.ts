@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 @Component({
     selector: 'data-tables',
     templateUrl: './contactList.component.html',
-    styleUrls: ['./contactsList.scss']
+    
 
 
 })

@@ -15,7 +15,7 @@ export class GestionPageComponent implements OnInit {
     private ckeditorContent:string;
     private gestionpage:GestionPage = new GestionPage('','','','');
     err=false;
-    aliasError = "aaa";
+    aliasError = " ";
 
 
     constructor(private router:Router,
@@ -25,18 +25,20 @@ export class GestionPageComponent implements OnInit {
 
 
     public addPage(gestionpage){
+        this.aliasError=""
         console.log(gestionpage);
         this.gestionpageservice.addPage(gestionpage).subscribe(
             response =>  {
                 if(response.error) {
                     alert(`The page could not be added, server Error.`);
+
                 } else {
                     alert(`page added successfully.`);
                 }
             },
             error=> {
                 this.err=true;
-                this.aliasError="The page could not be added, alias duplicated."
+                this.aliasError="The page could not be added, alias duplicate !"
                 //alert(`The page could not be added, server Error.`);
             }
         );

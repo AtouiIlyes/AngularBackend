@@ -22,16 +22,14 @@ export class UpdateNewsComponent implements OnInit{
 
     private actualite:Actualite = new Actualite('','','',false,false,'');
     public uploader:FileUploader = new FileUploader({url: URL, itemAlias: 'photo'});
-    router: Router;
     constructor(
         private actualiteService: ActualiteService,
         private route: ActivatedRoute,
+        private router :Router,
         private http: Http,
-        private el: ElementRef,
-        _router: Router
+        private el: ElementRef
     )
     {
-        this.router = _router;
 
         this.route.params.subscribe(
             (params : Params) => {
@@ -48,6 +46,7 @@ export class UpdateNewsComponent implements OnInit{
                     alert(`The news could not be update, server Error.`);
                 } else {
                     alert(`The news is updated.`);
+                    this.router.navigate(['/newslist']);
 
                 }
             },

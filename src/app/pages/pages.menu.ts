@@ -79,6 +79,18 @@ export const PAGES_MENU = [
                 }
             },
             {
+                path: 'gestionmenus',
+                data: {
+                    menu: {
+                        title: 'Gestion Menus',
+                        icon: 'ion-gear-a',
+                        selected: false,
+                        expanded: false,
+                        order: 250,
+                    }
+                }
+            },
+            {
                 path: 'components',
                 data: {
                     menu: {
