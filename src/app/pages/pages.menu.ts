@@ -76,7 +76,20 @@ export const PAGES_MENU = [
                         expanded: false,
                         order: 250,
                     }
-                }
+                },
+                children: [
+                    {
+                        path: 'pagelist',
+                        data: {
+                            menu: {
+                                title: 'Page List',
+                                icon: 'ion-android-textsms'
+
+                            }
+                        }
+                    }
+
+                ]
             },
             {
                 path: 'gestionmenus',
@@ -88,7 +101,20 @@ export const PAGES_MENU = [
                         expanded: false,
                         order: 250,
                     }
-                }
+                },
+                children: [
+                    {
+                        path: 'menulist',
+                        data: {
+                            menu: {
+                                title: 'Menu List',
+                                icon: 'ion-android-textsms'
+
+                            }
+                        }
+                    }
+
+                ]
             },
             {
                 path: 'components',

@@ -6,6 +6,7 @@ export class GestionMenu {
         _id?: string,
         title?: string,
         position?: number,
-        page? : string
+        page? : string,
+        archived? : boolean
     ){}
 }

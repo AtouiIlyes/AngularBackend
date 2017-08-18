@@ -3,6 +3,9 @@
  */
 import { Routes, RouterModule } from '@angular/router';
 import {GestionPageComponent} from "./gestionpage.component";
+import {PageList} from "./pageList.component";
+import {AddPageComponent} from "./add-page.component";
+import {UpdatePageComponent} from "./update-page.component";
 
 
 
@@ -10,8 +13,12 @@ import {GestionPageComponent} from "./gestionpage.component";
 const routes: Routes = [
     {
         path: '',
-        component: GestionPageComponent
-        
+        component: GestionPageComponent,
+        children: [
+            { path: 'pagelist', component: PageList },
+            { path: 'addpage', component: AddPageComponent} ,
+            { path: 'update/:id', component: UpdatePageComponent }
+        ]
 
     }
 ];

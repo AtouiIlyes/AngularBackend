@@ -15,7 +15,7 @@ import {GestionMenu} from "./gestionmenu";
 export class AddMenuComponent implements OnInit {
     pages: GestionPage[];
     page: GestionPage;
-    private gestionmenu:GestionMenu = new GestionMenu('','',0,'');
+    private gestionmenu:GestionMenu = new GestionMenu('','',0,'',false);
 
 
     constructor(
@@ -51,7 +51,7 @@ export class AddMenuComponent implements OnInit {
     }
 
     public resetAddMenu(){
-        this.gestionmenu = new GestionMenu('','',0,'');
+        this.gestionmenu = new GestionMenu('','',0,'',false);
     }
     ngOnInit():void {
         this.getPages();

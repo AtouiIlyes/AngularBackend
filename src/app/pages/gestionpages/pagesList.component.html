@@ -1,4 +1,4 @@
-<button class="btn btn-success" type="button"  [routerLink]="['../addmenu']"><i class="ion-ios-plus-outline"></i>  Add Menu</button>
+<button class="btn btn-success" type="button"  [routerLink]="['../addpage']"><i class="ion-ios-plus-outline"></i>  Add Page</button>
 <br><br> <hr>
 <div class="widgets">
     <div class="row">
@@ -39,7 +39,7 @@
                 </div>
             </div>
             <div class="panel panel-default">
-                <div class="panel-heading">Menus List</div>
+                <div class="panel-heading">Pages List</div>
 
                 <table class="table table-striped" [mfData]="data | dataFilter : filterQuery" #mf="mfDataTable" [mfRowsOnPage]="rowsOnPage" [(mfSortBy)]="sortBy" [(mfSortOrder)]="sortOrder">
                     <thead>
@@ -49,13 +49,13 @@
                             <mfDefaultSorter by="title">Title</mfDefaultSorter>
                         </th>
                         <th style="width: 30%">
-                            <mfDefaultSorter by="position">Position</mfDefaultSorter>
+                            <mfDefaultSorter by="content">Content</mfDefaultSorter>
+                        </th>
+                        <th style="width: 10%">
+                            <mfDefaultSorter by="alias">Alias</mfDefaultSorter>
                         </th>
                         <th style="width: 10%">
                             <mfDefaultSorter by="archived">Archived</mfDefaultSorter>
-                        </th>
-                        <th style="width: 10%">
-                            <mfDefaultSorter by="page">Page</mfDefaultSorter>
                         </th>
 
                         <th style="width: 10%">archiver</th>
@@ -66,17 +66,17 @@
 
                     </thead>
                     <tbody>
-                    <tr *ngFor="let menu of menus"  >
+                    <tr *ngFor="let page of pages"  >
 
-                        <td >{{menu.title}}</td>
-                        <td >{{menu.position}}</td>
-                        <td >{{menu.archived}}</td>
-                        <td >{{menu.page}}</td>
+                        <td >{{page.title}}</td>
+                        <td >{{page.content}}</td>
+                        <td >{{page.alias}}</td>
+                        <td >{{page.archived}}</td>
                         <td>
-                            <button  (click)="archiverMenu(menu._id)" class="btn btn-danger">x</button>
+                            <button  (click)="archiverPage(page._id)" class="btn btn-danger">x</button>
                         </td>
                         <td>
-                            <button  [routerLink]="['../update', menu._id]" class="btn btn-info"><i class="ion-edit" aria-hidden="true"></i></button>
+                            <button  [routerLink]="['../update', page._id]" class="btn btn-info"><i class="ion-edit" aria-hidden="true"></i></button>
                         </td>
 
                     </tr>

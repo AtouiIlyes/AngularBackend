@@ -15,6 +15,7 @@ import {MenuList} from "./menusList.component";
 import {AddMenuComponent} from "./add-menu.component";
 import {UpdateMenuComponent} from "./update-menu.component";
 import {DataFilterPipe} from "./data-filter.pipe";
+import {GestionMenuComponent} from "./gestionmenu.component";
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {DataFilterPipe} from "./data-filter.pipe";
 
     ],
     declarations: [
+        GestionMenuComponent,
         AddMenuComponent,
         UpdateMenuComponent,
         MenuList,

@@ -19,9 +19,9 @@ export class GestionMenuService {
 
     // private instance variable to hold base url
     private pageURL = 'http://localhost:8080/api/pageswithoutmenu';
-    private menuURL = 'http://localhost:8080/api/menus';
-    private menuUpdate ='http://localhost:8080/api/menus/:menu_id';
-    private menuArchive ='http://localhost:8080/api/menus/archiver/:id'
+    private menuURL = 'http://localhost:8080/api/menus/';
+    private menuUpdate ='http://localhost:8080/api/menus/';
+    private menuArchive ='http://localhost:8080/api/menus/archiver/'
     // Fetch all existing pages
     getPages() : Observable<GestionPage[]> {
 

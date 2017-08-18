@@ -6,6 +6,7 @@ export class GestionPage {
         _id?: string,
         title?: string,
         alias?: string,
-        content? : string
+        content? : string,
+        archived? : boolean
     ){}
 }

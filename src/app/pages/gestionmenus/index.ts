@@ -1,4 +1,4 @@
 /**
  * Created by atoui on 17/08/2017.
  */
-export * from './menusList.component';
+export * from './gestionmenu.component';

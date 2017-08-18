@@ -12,7 +12,7 @@ import {GestionPage} from "../gestionpages/gestionpage";
 
 
 @Component({
-    selector: 'add-news',
+    selector: 'update-news',
     templateUrl: './update-menu.component.html'
 })
 
@@ -20,7 +20,7 @@ export class UpdateMenuComponent implements OnInit{
     id: string;
     pages: GestionPage[];
     page: GestionPage;
-    private menu:GestionMenu = new GestionMenu('','',0,'');
+    private menu:GestionMenu = new GestionMenu('','',0,'',false);
     constructor(
         private gestionmenuservice: GestionMenuService,
         private route: ActivatedRoute,
@@ -50,10 +50,11 @@ export class UpdateMenuComponent implements OnInit{
     public updateMenu(id,menu){
         this.gestionmenuservice.updateMenu(this.id,this.menu).subscribe(
             response => {
+                console.log(this.id,this.menu)
                 if(response.error) {
                     alert(`The menu could not be update, server Error.`);
                 } else {
-                    this.getPages();
+                    //this.getPages();
                     alert(`The menu is updated.`);
 
                 }
@@ -73,7 +74,7 @@ export class UpdateMenuComponent implements OnInit{
 
 
     public resetUpdateMenu(){
-        this.menu = new GestionMenu('','',0,'');
+        this.menu = new GestionMenu('','',0,'',false);
     }
 
 

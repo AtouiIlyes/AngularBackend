@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {MenuList} from "./menusList.component";
 import {AddMenuComponent} from "./add-menu.component";
 import {UpdateMenuComponent} from "./update-menu.component";
+import {GestionMenuComponent} from "./gestionmenu.component";
 
 
 
@@ -12,8 +13,9 @@ import {UpdateMenuComponent} from "./update-menu.component";
 const routes: Routes = [
     {
         path: '',
-        component: MenuList,
+        component: GestionMenuComponent,
         children: [
+            { path: 'menulist', component: MenuList },
             { path: 'addmenu', component: AddMenuComponent} ,
             { path: 'update/:id', component: UpdateMenuComponent }
         ]

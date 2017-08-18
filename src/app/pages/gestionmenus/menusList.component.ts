@@ -3,7 +3,6 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Http, Response } from '@angular/http';
 import {GestionMenu} from "./gestionmenu";
 import {GestionMenuService} from "./gestionmenu.service";
 
