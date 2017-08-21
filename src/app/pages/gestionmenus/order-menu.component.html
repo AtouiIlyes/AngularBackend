@@ -1,0 +1,38 @@
+<!--<ul ngui-sortable  >-->
+    <!--<li *ngFor="let menu of menus">{{menu.title}}</li>-->
+    <!--<li >Order</li>-->
+    <!--<li> Me</li>-->
+<!--</ul>-->
+
+<!--<ul ngui-sortable>-->
+    <!--<li >Order</li>-->
+    <!--<li> Me</li>-->
+    <!--<li >Right</li>-->
+    <!--<li id="the">The</li>-->
+    <!--<li id="into">Into</li>-->
+    <!--<li id="put">Put</li>-->
+<!--</ul>-->
+
+<h4>sort the elements of the menu</h4>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                 Menus
+            </div>
+            <div class="panel-body">
+                <ul class="list-group" dnd-sortable-container [sortableData]="menus">
+                    <li style="color:blue;" *ngFor="let menu of menus; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{menu.title}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                My prefences:<br/>
+                <span *ngFor="let menu of menus; let i = index">{{i + 1}}) {{menu.title}}<br/></span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -112,9 +112,20 @@ export const PAGES_MENU = [
 
                             }
                         }
+                    },
+                    {
+                        path: 'ordermenu',
+                        data: {
+                            menu: {
+                                title: 'Order menu',
+                                icon: 'ion-android-textsms'
+
+                            }
+                        }
                     }
 
                 ]
+
             },
             {
                 path: 'components',

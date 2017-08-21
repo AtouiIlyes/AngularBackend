@@ -26,6 +26,15 @@ export class TreeView {
           {value: 'CoffeeScript'},
           {value: 'Lua'},
         ]
+      },
+      {
+        value: 'test1',
+      },
+      {
+        value: 'test2',
+      },
+      {
+        value: 'test3',
       }
     ]
   };

@@ -16,6 +16,10 @@ import {AddMenuComponent} from "./add-menu.component";
 import {UpdateMenuComponent} from "./update-menu.component";
 import {DataFilterPipe} from "./data-filter.pipe";
 import {GestionMenuComponent} from "./gestionmenu.component";
+import { NguiSortableModule } from '@ngui/sortable';
+import {OrderMenuComponent} from "./order-menu.component";
+import { TreeModule } from 'ng2-tree';
+import {DndModule} from 'ng2-dnd';
 
 
 @NgModule({
@@ -28,11 +32,10 @@ import {GestionMenuComponent} from "./gestionmenu.component";
         HttpModule,
         Ng2SmartTableModule,
         DataTableModule,
-        HotTableModule
-
-
-
-
+        HotTableModule,
+        NguiSortableModule,
+        TreeModule,
+        DndModule.forRoot()
 
     ],
     declarations: [
@@ -40,6 +43,7 @@ import {GestionMenuComponent} from "./gestionmenu.component";
         AddMenuComponent,
         UpdateMenuComponent,
         MenuList,
+        OrderMenuComponent,
         DataFilterPipe
 
 
