@@ -1,8 +1,8 @@
 /**
  * Created by atoui on 21/08/2017.
  */
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {GestionMenu} from "./gestionmenu";
 import {GestionMenuService} from "./gestionmenu.service";
 import {TreeModel} from "ng2-tree/index";
@@ -12,17 +12,17 @@ import {TreeModel} from "ng2-tree/index";
     styleUrls: ['./order-menu.component.css']
 
 })
-export class OrderMenuComponent implements OnInit  {
-    menus: GestionMenu[];
-    menu: GestionMenu;
-    listOne: Array<string> = ['Coffee', 'Orange Juice', 'Red Wine', 'Unhealty drink!', 'Water'];
+export class OrderMenuComponent implements OnInit {
+    menus:GestionMenu[];
+    menu:GestionMenu;
+    i = 0;
 
-    constructor(
-        private router: Router,
-        private menuService: GestionMenuService) { }
+    constructor(private router:Router,
+                private menuService:GestionMenuService) {
+    }
 
-   
-    getMenus(): void {
+
+    getMenus():void {
         this.menuService.getMenus()
             .subscribe(
                 menus => this.menus = menus, //Bind to view
@@ -33,7 +33,55 @@ export class OrderMenuComponent implements OnInit  {
             );
     }
 
-    ngOnInit(): void {
+    sortChanged($event:any,menus,i):void {
+        this.i=i;
+        var position =0;
+        menus.forEach((menu,i) => {
+            menu.position = position - 49 + i;
+
+        });
+        console.log(menus);
+
+    }
+    public updateSortableMenu(menus){
+        this.menuService.updateSortableMenu(this.menus).subscribe(
+            response => {
+                //console.log(this.menus)
+                if(response.error) {
+                    alert(`The menus could not be update, server Error.`);
+                } else {
+                    alert(`The menus is ordered and updated.`);
+
+                }
+            },
+            error=> {
+                alert(`The menus could not be update, server Error.`);
+            }
+        );
+    }
+    public archiverMenu(id:string){
+        this.menuService.archiverMenu(id).subscribe(
+            response => {
+                if(response.error) {
+                    alert(`The menu could not be archived, server Error.`);
+                } else {
+                    this.getMenus();
+                    alert(`The menu is archived.`);
+
+
+                }
+            },
+            error=> {
+                alert(`The menu could not be archived, server Error.`);
+            }
+        );
+    }
+
+    onSelect(menu: GestionMenu): void {
+        this.menu = menu;
+    }
+
+    ngOnInit():void {
         this.getMenus();
     }
 }

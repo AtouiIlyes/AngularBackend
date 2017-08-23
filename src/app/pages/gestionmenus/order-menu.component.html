@@ -1,28 +1,24 @@
-<!--<ul ngui-sortable  >-->
-    <!--<li *ngFor="let menu of menus">{{menu.title}}</li>-->
-    <!--<li >Order</li>-->
-    <!--<li> Me</li>-->
-<!--</ul>-->
-
-<!--<ul ngui-sortable>-->
-    <!--<li >Order</li>-->
-    <!--<li> Me</li>-->
-    <!--<li >Right</li>-->
-    <!--<li id="the">The</li>-->
-    <!--<li id="into">Into</li>-->
-    <!--<li id="put">Put</li>-->
-<!--</ul>-->
-
+<button class="btn btn-success" type="button"  [routerLink]="['../addmenu']"><i class="ion-ios-plus-outline"></i>  Add Menu</button>
+<br><br> <hr>
 <h4>sort the elements of the menu</h4>
 <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-5">
         <div class="panel panel-success">
             <div class="panel-heading">
-                 Menus
+                Menus
             </div>
             <div class="panel-body">
                 <ul class="list-group" dnd-sortable-container [sortableData]="menus">
-                    <li style="color:blue;" *ngFor="let menu of menus; let i = index" class="list-group-item" dnd-sortable [sortableIndex]="i">{{menu.title}}</li>
+                    <li style="color:blue;" *ngFor="let menu of menus; let i = index" class="list-group-item"
+                        dnd-sortable [sortableIndex]="i" [dragEnabled]="true" [dragData]="menus"
+                        (onDropSuccess)="sortChanged($event,menus,i)">
+                        <span class="col-lg-8">{{menu.title}}</span>
+                        <div class="col-lg-4">
+                            <button class="btn btn-danger btn-icon" (click)="archiverMenu(menu._id)">x</button>
+                            <button class="btn btn-primary btn-icon" [routerLink]="['../update', menu._id]"><i class="ion-edit" aria-hidden="true"></i></button>
+                        </div>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -30,9 +26,11 @@
     <div class="col-sm-6">
         <div class="panel panel-default">
             <div class="panel-body">
-                My prefences:<br/>
-                <span *ngFor="let menu of menus; let i = index">{{i + 1}}) {{menu.title}}<br/></span>
+                My prefences:<br/><br>
+                <span *ngFor="let menu of menus; let i = index">{{i + 1}}) {{menu.title}} _  {{menu.position}}<br/></span>
             </div>
         </div>
     </div>
 </div>
+<br><br>
+<button class="btn btn-primary" (click)="updateSortableMenu(menus)">Update menu</button>

@@ -70,7 +70,7 @@ export class GestionMenuService {
             .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
-    // archive a News
+    // archive a Menu
     archiverMenu(id:string) {
         console.log(id);
         return this.http.put(`${this.menuArchive}${id}`,GestionMenu) // ...using put request
@@ -78,10 +78,18 @@ export class GestionMenuService {
             .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
     }
 
-// Update a News
+// Update a Menu
     updateMenu(id:string,menu:GestionMenu) {
         console.log(id,menu);
         return this.http.put(`${this.menuUpdate}${id}`,menu) // ...using put request
+            .map((res:Response) => {return res.json(); }) // ...and calling .json() on the response to return data
+            .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+    }
+
+    // Update a News
+    updateSortableMenu(menus:GestionMenu[]) {
+        //console.log(id,menu);
+        return this.http.put(`${this.menuURL}`, menus) // ...using put request
             .map((res:Response) => {return res.json(); }) // ...and calling .json() on the response to return data
             .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
     }

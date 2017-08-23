@@ -48,9 +48,7 @@
                         <th style="width: 20%">
                             <mfDefaultSorter by="title">Title</mfDefaultSorter>
                         </th>
-                        <th style="width: 30%">
-                            <mfDefaultSorter by="content">Content</mfDefaultSorter>
-                        </th>
+
                         <th style="width: 10%">
                             <mfDefaultSorter by="alias">Alias</mfDefaultSorter>
                         </th>
@@ -69,7 +67,6 @@
                     <tr *ngFor="let page of pages"  >
 
                         <td >{{page.title}}</td>
-                        <td >{{page.content}}</td>
                         <td >{{page.alias}}</td>
                         <td >{{page.archived}}</td>
                         <td>

@@ -11,7 +11,6 @@ import {GestionMenuService} from "./gestionmenu.service";
 import {HotTableModule} from "ng2-handsontable/handsontable.module";
 import {DataTableModule} from "angular2-datatable/index";
 import {Ng2SmartTableModule} from "ng2-smart-table/ng2-smart-table.module";
-import {MenuList} from "./menusList.component";
 import {AddMenuComponent} from "./add-menu.component";
 import {UpdateMenuComponent} from "./update-menu.component";
 import {DataFilterPipe} from "./data-filter.pipe";
@@ -42,7 +41,6 @@ import {DndModule} from 'ng2-dnd';
         GestionMenuComponent,
         AddMenuComponent,
         UpdateMenuComponent,
-        MenuList,
         OrderMenuComponent,
         DataFilterPipe
 

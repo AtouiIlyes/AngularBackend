@@ -103,16 +103,7 @@ export const PAGES_MENU = [
                     }
                 },
                 children: [
-                    {
-                        path: 'menulist',
-                        data: {
-                            menu: {
-                                title: 'Menu List',
-                                icon: 'ion-android-textsms'
-
-                            }
-                        }
-                    },
+                   
                     {
                         path: 'ordermenu',
                         data: {

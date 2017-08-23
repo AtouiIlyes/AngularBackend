@@ -16,7 +16,6 @@ const routes: Routes = [
         path: '',
         component: GestionMenuComponent,
         children: [
-            { path: 'menulist', component: MenuList },
             { path: 'addmenu', component: AddMenuComponent} ,
             { path: 'update/:id', component: UpdateMenuComponent },
             { path: 'ordermenu', component: OrderMenuComponent },
