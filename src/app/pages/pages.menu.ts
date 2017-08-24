@@ -109,7 +109,7 @@ export const PAGES_MENU = [
                         data: {
                             menu: {
                                 title: 'Order menu',
-                                icon: 'ion-android-textsms'
+                                icon: 'ion-grid'
 
                             }
                         }

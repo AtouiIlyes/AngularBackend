@@ -88,7 +88,6 @@ export class GestionMenuService {
 
     // Update a News
     updateSortableMenu(menus:GestionMenu[]) {
-        //console.log(id,menu);
         return this.http.put(`${this.menuURL}`, menus) // ...using put request
             .map((res:Response) => {return res.json(); }) // ...and calling .json() on the response to return data
             .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any

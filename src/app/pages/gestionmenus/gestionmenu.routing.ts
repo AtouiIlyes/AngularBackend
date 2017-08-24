@@ -2,7 +2,6 @@
  * Created by atoui on 17/08/2017.
  */
 import { Routes, RouterModule } from '@angular/router';
-import {MenuList} from "./menusList.component";
 import {AddMenuComponent} from "./add-menu.component";
 import {UpdateMenuComponent} from "./update-menu.component";
 import {GestionMenuComponent} from "./gestionmenu.component";
@@ -18,7 +17,7 @@ const routes: Routes = [
         children: [
             { path: 'addmenu', component: AddMenuComponent} ,
             { path: 'update/:id', component: UpdateMenuComponent },
-            { path: 'ordermenu', component: OrderMenuComponent },
+            { path: 'ordermenu', component: OrderMenuComponent }
 
         ]
 

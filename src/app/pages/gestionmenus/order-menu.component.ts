@@ -44,6 +44,7 @@ export class OrderMenuComponent implements OnInit {
 
     }
     public updateSortableMenu(menus){
+        console.log(menus);
         this.menuService.updateSortableMenu(this.menus).subscribe(
             response => {
                 //console.log(this.menus)
